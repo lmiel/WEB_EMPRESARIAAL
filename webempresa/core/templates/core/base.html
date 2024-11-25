@@ -39,34 +39,45 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav mx-auto">
-          <li class="nav-item active px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'home' %}">Inicio</a>
+          <li class="nav-item px-lg-4
+          {% if request.path == '/' %}active{% endif %}">
+          <a class="nav-link text-uppercase text-expanded"
+          href="{% url 'home' %}">Inicio</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'about' %}">Historia</a>
+          <li class="nav-item px-lg-4
+          {% if request.path == '/about/' %}active{% endif %}">
+          <a class="nav-link text-uppercase text-expanded"
+          href="{% url 'about' %}">Historia</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'services' %}">Servicios</a>
+          <li class="nav-item px-lg-4
+          {% if request.path == '/services/' %}active{% endif %}">
+          <a class="nav-link text-uppercase text-expanded"
+          href="{% url 'services' %}">Servicios</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'store' %}">Visítanos</a>
+          <li class="nav-item px-lg-4
+          {% if request.path == '/store/' %}active{% endif %}">
+          <a class="nav-link text-uppercase text-expanded"
+          href="{% url 'store' %}">Visítanos</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'contact' %}">Contacto</a>
+          <li class="nav-item px-lg-4
+          {% if request.path == '/contact/' %}active{% endif %}">
+          <a class="nav-link text-uppercase text-expanded"
+          href="{% url 'contact' %}">Contacto</a>
           </li>
-          <li class="nav-item px-lg-4">
-            <a class="nav-link text-uppercase text-expanded" href="{% url 'blog' %}">Blog</a>
+          <li class="nav-item px-lg-4
+          {% if request.path == '/blog/' %}active{% endif %}">
+          <a class="nav-link text-uppercase text-expanded"
+          href="{% url 'blog' %}">Blog</a>
           </li>
-        </ul>
+          </ul>
       </div>
     </div>
   </nav>
 
   <!-- Contenido dinámico -->
-  <main>
-    {% block content %}
-    {% endblock %}
-  </main>
+
+  {% block content %}
+  {% endblock %}
 
   <!-- Pié de página -->
   <footer class="footer text-faded text-center py-5">
@@ -92,9 +103,9 @@
         </a>
       </p>
       <p class="m-0 mbt">
-        <a href="{% url 'privacy_policy' %}" class="link">Política de privacidad</a> ·
-        <a href="{% url 'legal_notice' %}" class="link">Aviso legal</a> ·
-        <a href="{% url 'cookies' %}" class="link">Cookies</a>
+        <a href= 'privacy_policy' class="link">Política de privacidad</a> ·
+        <a href= 'legal_notice' class="link">Aviso legal</a> ·
+        <a href= 'cookies' class="link">Cookies</a>
       </p>
       <p class="m-0 mbt1">&copy; La Caffettiera 2018</p>
     </div>
