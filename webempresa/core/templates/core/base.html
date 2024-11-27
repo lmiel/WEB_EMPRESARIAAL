@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load pages_extras %}
 <html lang="es">
   <head>
     {% load static %}
@@ -105,9 +106,11 @@
           {% endif %}
         </p>
         <p class="m-0 mbt"></p>
-        <a href= 'privacy_policy' class="link">Política de privacidad</a>
-        <a href= 'legal_notice' class="link">Aviso legal</a> 
-        <a href= 'cookies' class="link">Cookies</a>
+        {% get_page_list as page_list %}
+        {% for page in page_list %}
+          <a href="{% url 'page' page.id page.title|slugify %}" class="link">
+          {{page.title}}</a> {% if not forloop.last %}·{% endif %}
+        {% endfor %}
         <p class="m-0 mbt1">&copy; La Caffettiera 2018</p>
       </div>
     </footer>

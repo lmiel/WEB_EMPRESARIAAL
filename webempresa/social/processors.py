@@ -5,7 +5,7 @@ def ctx_dict(request):
     links = Link.objects.all()
     
     # Inicializa el contexto con valores iniciales
-    ctx = {'test': 'hola'}
+    ctx = {}
     
     # Agrega las claves y URLs al contexto
     for link in links:
