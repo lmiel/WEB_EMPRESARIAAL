@@ -21,7 +21,15 @@
               <span class="section-heading-lower">Contacto</span>
             </h2>
             {% if 'ok' in request.GET %}
+              <div class="alert alert-success" role="alert">
               <p><b>Tu mensaje ha sido enviado correctamente.</b></p>
+              </div>
+            {% endif %}
+
+            {% if 'error' in request.GET %}
+              <div class="alert alert-danger" role="alert">
+              <p><b>Hubo un error al enviar el mensaje. Inténtalo de nuevo.</b></p>
+              </div>
             {% endif %}
             <form action="" method="POST">
               {% csrf_token %}
@@ -44,7 +52,7 @@
                 {{ form.content.errors }}
               </div>
               <div class="text-center">
-                <input type="submit" class="btn btn-primary btn-block py-2" value="Enviar" {% if 'ok' in request.GET %}disabled{% endif %}>
+                 <input type="submit" class="btn btn-primary btn-block py-2" value="Enviar">{% comment %} {% if 'ok' in request.GET %}disabled{% endif %} {% endcomment %}
               </div>
             </form>
           </div>
