@@ -33,9 +33,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = "django-insecure-2emx1y*2i2fn-!0z6v!an9@vt_yc0c-zpg5to7c0&6_53ox158"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'pages.apps.PagesConfig',
     'ckeditor',
     'contact',
+    'whitenoise.runserver_nostatic',
 ]
 
 MIDDLEWARE = [
@@ -64,6 +65,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = "webempresa.urls"
@@ -162,3 +164,5 @@ CKEDITOR_CONFIGS = {
 'toolbar': 'Basic',
 }
 }
+
+
