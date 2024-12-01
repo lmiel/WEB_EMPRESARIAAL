@@ -6,6 +6,13 @@ class CategoryAdmin(admin.ModelAdmin):
     readonly_fields = ("created", "updated")
 
 
+class LinkAdmin(admin.ModelAdmin):
+    def get_readonly_fields(self, request, obj=None):
+        if request.user.groups.filter(name="Personal").exists():
+            return ('key', 'name')
+        else:
+            return ()
+
 class PostAdmin(admin.ModelAdmin):
     readonly_fields = ('created', 'updated')
     list_display = ('title', 'author', 'published', 'post_categories')

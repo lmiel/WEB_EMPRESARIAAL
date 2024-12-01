@@ -29,14 +29,14 @@
   <body>
     <!-- Cabecera -->
     <h1 class="site-heading text-center text-white d-none d-lg-block">
-      <span class="site-heading-upper text-primary mb-3">L'autentico caffè d'italia</span>
-      <span class="site-heading-lower">La Caffettiera</span>
+      <span class="site-heading-upper text-primary mb-3">Tu espacio a medida</span>
+      <span class="site-heading-lower">Azulejos Gala</span>
     </h1>
 
     <!-- Navegación -->
     <nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">
       <div class="container">
-        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">La Caffettiera</a>
+        <a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="{% url 'home' %}">Azulejos Gala</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav mx-auto">
@@ -80,19 +80,19 @@
       <div class="container">
         {{ test }}
         <p class="m-0">
-          {% if LINK_TWITTER %}
-            <a href="{{ LINK_TWITTER }}" class="link">
+          {% if LINK_PINTEREST %}
+            <a href="{{ LINK_PINTEREST }}" class="link">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
               </span>
             </a>
           {% endif %}
-          {% if LINK_FACEBOOK %}
-            <a href="{{ LINK_FACEBOOK }}" class="link">
+          {% if LINK_LINKEDIN %}
+            <a href="{{ LINK_LINKEDIN }}" class="link">
               <span class="fa-stack fa-lg">
                 <i class="fa fa-circle fa-stack-2x"></i>
-                <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
               </span>
             </a>
           {% endif %}
@@ -111,7 +111,7 @@
           <a href="{% url 'page' page.id page.title|slugify %}" class="link">
           {{page.title}}</a> {% if not forloop.last %}·{% endif %}
         {% endfor %}
-        <p class="m-0 mbt1">&copy; La Caffettiera 2018</p>
+        <p class="m-0 mbt1">&copy; Azulejos Gala 2024</p>
       </div>
     </footer>
 
